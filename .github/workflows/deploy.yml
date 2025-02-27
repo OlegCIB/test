@@ -33,5 +33,5 @@ jobs:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: |
-          echo $GPG_PRIVATE_KEY | gpg --batch --import
+          run: echo "$GPG_PRIVATE_KEY" | base64 --decode | gpg --batch --import
           mvn clean deploy -P release
