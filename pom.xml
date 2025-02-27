@@ -4,10 +4,31 @@
   
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.cibseven.community</groupId>
+        <artifactId>release-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
     <groupId>org.cibseven.community</groupId>
     <artifactId>test</artifactId>
     <version>1.0.0</version>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.7.30</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-  
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>
