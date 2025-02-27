@@ -20,66 +20,9 @@
       <spring-boot.version>3.3.5</spring-boot.version>
     </properties>
 
-    <dependencyManagement>
-
-        <dependencies>
-
-            <!-- Spring Boot import -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-
-            <!-- CIB seven -->
-            <dependency>
-                <groupId>org.cibseven.bpm</groupId>
-                <artifactId>cibseven-bom</artifactId>
-                <version>${cibseven.compile.version}</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-
-        </dependencies>
-
-    </dependencyManagement>
-
-    <dependencies>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.cibseven.bpm</groupId>
-            <artifactId>cibseven-engine</artifactId>
-            <version>${cibseven.compile.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.cibseven.bpm</groupId>
-            <artifactId>cibseven-engine-spring</artifactId>
-            <version>${cibseven.compile.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-    </dependencies>
+    <modules>
+      <module>extension</module>
+    </modules>
 
   <repositories>
 
