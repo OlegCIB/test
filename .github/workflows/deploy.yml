@@ -35,4 +35,4 @@ jobs:
         run: |
           echo "Length: $(echo -n "$GPG_PRIVATE_KEY" | wc -c)"
           echo "$GPG_PRIVATE_KEY" | base64 --decode | gpg --batch --import
-          mvn clean deploy -P release
+          mvn clean deploy -Psonatype-oss-release -Dskip.cibseven.release=false -DskipTests
