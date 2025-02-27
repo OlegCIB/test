@@ -33,6 +33,6 @@ jobs:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: |
-          echo "Length: $(echo -n "$GPG_PRIVATE_KEY" | wc -c)"
           echo "$GPG_PRIVATE_KEY" | base64 --decode | gpg --batch --import
-          mvn clean deploy -Psonatype-oss-release -Dskip.cibseven.release=false -DskipTests
+          GPG_KEYNAME=$(gpg --list-keys --with-colons | grep pub | cut -d: -f5)
+          mvn clean deploy -Psonatype-oss-release -Dskip.cibseven.release=true -DskipTests -Dgpg.keyname="${GPG_KEYNAME}" -Dgpg.passphrase="${GPG_PASSPHRASE}"
