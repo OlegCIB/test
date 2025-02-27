@@ -35,4 +35,13 @@ jobs:
         run: |
           echo "$GPG_PRIVATE_KEY" | base64 --decode | gpg --batch --import
           GPG_KEYNAME=$(gpg --list-keys --with-colons | grep pub | cut -d: -f5)
-          mvn clean deploy -Psonatype-oss-release -Dskip.cibseven.release=true -DskipTests -Dgpg.keyname="${GPG_KEYNAME}" -Dgpg.passphrase="${GPG_PASSPHRASE}"
+          mvn \
+            -Dgpg.keyname="${GPG_KEYNAME}" \
+            -Dgpg.passphrase="${params.GPG_KEY_PASSPHRASE}" \
+            -Dcommunity.username="${OSSRH_USERNAME}" \
+            -Dcommunity.password="${OSSRH_PASSWORD}" \
+            --global-settings settings.xml \
+            clean deploy \
+            -Psonatype-oss-release \
+            -Dskip.cibseven.release=true \
+            -DskipTests
