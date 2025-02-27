@@ -13,6 +13,7 @@
     <groupId>org.cibseven.community</groupId>
     <artifactId>test</artifactId>
     <version>1.0.0</version>
+    <packaging>pom</packaging>
 
     <properties>
       <cibseven.compile.version>1.1.0</cibseven.compile.version>
@@ -64,7 +65,7 @@
             <version>${cibseven.compile.version}</version>
             <scope>provided</scope>
         </dependency>
-        
+
         <dependency>
             <groupId>org.cibseven.bpm</groupId>
             <artifactId>cibseven-engine-spring</artifactId>
