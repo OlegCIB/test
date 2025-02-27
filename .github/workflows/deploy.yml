@@ -37,7 +37,7 @@ jobs:
           GPG_KEYNAME=$(gpg --list-keys --with-colons | grep pub | cut -d: -f5)
           mvn \
             -Dgpg.keyname="${GPG_KEYNAME}" \
-            -Dgpg.passphrase="${params.GPG_KEY_PASSPHRASE}" \
+            -Dgpg.passphrase="${GPG_PASSPHRASE}" \
             -Dcommunity.username="${OSSRH_USERNAME}" \
             -Dcommunity.password="${OSSRH_PASSWORD}" \
             --global-settings settings.xml \
