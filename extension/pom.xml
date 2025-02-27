@@ -14,6 +14,10 @@
     <artifactId>test-extension</artifactId>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>core</module>
+    </modules>
+
     <dependencyManagement>
 
         <dependencies>
@@ -39,41 +43,5 @@
         </dependencies>
 
     </dependencyManagement>
-
-    <dependencies>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.cibseven.bpm</groupId>
-            <artifactId>cibseven-engine</artifactId>
-            <version>${cibseven.compile.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.cibseven.bpm</groupId>
-            <artifactId>cibseven-engine-spring</artifactId>
-            <version>${cibseven.compile.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-    </dependencies>
-
     
 </project>
